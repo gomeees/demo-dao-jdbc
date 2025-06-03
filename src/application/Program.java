@@ -1,7 +1,5 @@
 package application;
 
-import java.time.LocalDate;
-
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Department;
@@ -16,7 +14,8 @@ public class Program {
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
-		Seller seller = new Seller(21, "Bob", "bob@gmail.com", LocalDate.now(), 3000.0 , obj);
+		Seller seller = sellerDao.findById(3);
+		
 		System.out.println(seller);
 		
 	}
